@@ -1,0 +1,80 @@
+﻿@model BVS.Models.Entity.Parceria.AlteracaoSaida
+
+@{
+    ViewData["Title"] = "ObterPorId";
+}
+<div class="d-flex justify-content-between align-content-center pt-3 pb-2">
+    <h1>Informações da Saída</h1>
+    <a class="btn btn-primary btn-lg" asp-action="ObterTodos">Voltar</a>
+</div>
+                <div class="card">
+                    <div class="card-body row">
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayNameFor(model => model.InicioParceria)</label>
+                               <input class ="form-control" value="@Html.DisplayFor(model => model.InicioParceria.Lote)" disabled/>                                 
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-group">     
+                                <label class="control-label">@Html.DisplayNameFor(model => model.Comprador)</label>
+                                <input class ="form-control" value="@Html.DisplayFor(model => model.Comprador.Nome)" disabled/>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayNameFor(model => model.Associado)</label>
+                                <input class ="form-control" value="@Html.DisplayFor(model => model.Associado.Nome)" disabled/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Dados da Saída</div>
+                    <div class="card-body row">
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayNameFor(model => model.PesoBruto)</label>
+                                <input class="form-control" value="@Html.DisplayFor(model => model.PesoBruto)"disabled/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayNameFor(model => model.RendimentoCarcaca)</label>
+                                <input class="form-control" value="@Html.DisplayFor(model => model.RendimentoCarcaca)" disabled/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayNameFor(model => model.Arroba)</label>
+                                <input class="form-control" value="@Html.DisplayFor(model => model.Arroba)" disabled/>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayNameFor(model => model.Classificacao)</label>
+                                <input class="form-control" value="@Html.DisplayFor(model => model.Classificacao)"  disabled/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayNameFor(model => model.CompraVenda)</label>
+                                <input class="form-control" value="@Html.DisplayFor(model => model.CompraVenda)" disabled/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">@Html.DisplayNameFor(model => model.Saida)</label>
+                                <input class="form-control" value="@Html.DisplayFor(model => model.Saida)" disabled/>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        @*<div class="form-group">
+        <label asp-for="PesoMedioAlterado" class="control-label"></label>
+        <input asp-for="PesoMedioAlterado" id="psMdAlterado" class="form-control" 
+        <span asp-validation-for="PesoMedioAlterado" class="text-danger"></span>
+        </div>*@
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PesoMedioAlterado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PesoMedioAlterado)
+        </dd>*@
+<br />
+<div>
+    <a class="btn btn-success btn-lg" asp-action="Atualizar" asp-route-id="@Model?.InicioParceria.BoiId">Atualizar Dados</a>    
+</div>

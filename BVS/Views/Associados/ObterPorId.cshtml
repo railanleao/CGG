@@ -1,0 +1,46 @@
+﻿@model BVS.Models.Entity.CompradorAssociado.Associado
+
+@{
+    ViewData["Title"] = "ObterPorId";
+}
+
+<div class="d-flex justify-content-between align-content-center pt-3 pb-2">
+   <h1>Confirme os Dados</h1>
+   <a class="btn btn-primary btn-lg" asp-action="ObterTodos">Voltar</a>
+</div>
+
+    <div class="card">
+        <div class="card-header">Informações Pessoais</div>
+        <div class="card-body">
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(model => model.Nome)</label>
+                <input disabled class="form-control" value="@Html.DisplayFor(model => model.Nome)"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">@Html.DisplayNameFor(model => model.CPF)</label>
+                <input disabled class="form-control" value="@Html.DisplayFor(model => model.CPF)"/>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Fazenda)</label>
+                <input disabled value="@Html.DisplayFor(model => model.Fazenda)" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+        <div class="card">
+           <div class="card-header">Parceria</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>@Html.DisplayNameFor(model => model.DataDaParceria)</label>
+                        <input disabled value="@Html.DisplayFor(model => model.DataDaParceria)" class="form-control" />                        
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">@Html.DisplayNameFor(model => model.Comprador)</label>
+                        <input disabled class="form-control" value="@Html.DisplayFor(model => model.Comprador.Nome)"/>
+                    </div>
+                </div>
+    </div>
+<br />
+<div>
+    <a class="btn btn-success btn-lg" asp-action="Atualizar" asp-route-id="@Model?.CadastroId">Atualizar</a>
+</div>

@@ -1,0 +1,165 @@
+﻿@using BVS.Models.Entity.Parceria
+@model BVS.Models.Entity.Parceria.AlteracaoSaida
+
+@{
+    ViewData["Title"] = "Atualizar";
+}
+
+<div class="d-flex justify-content-between align-content-center pt-3 pb-2">
+    <h1>Atualizar a Saída</h1>
+    <a class="btn btn-primary btn-lg" asp-action="ObterTodos">Voltar</a>
+</div>
+
+<br />
+<div class="row">
+    <div class="col-md">
+        <form asp-action="Atualizar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div hidden class="form-group">
+                <label asp-for="InicioParceria.BoiId" class="control-label"></label>
+                <input asp-for="InicioParceria.BoiId" class="form-control" />                
+            </div>
+
+               @foreach(var item in (IEnumerable<BVS.Models.Entity.Parceria.InicioParceria>)ViewBag.selectParcerias)
+                {
+                    <div class="card">
+                        <div class="card-header">Dados da Saída</div>
+                        <div class="card-body row">
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label asp-for="@item.Lote" class="control-label"></label>
+                                    <input disabled asp-for="@item.Lote" class="form-control"/>
+                                    <span asp-validation-for="@item.Lote" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="@item.Valor" class="control-label"></label>
+                                    <input disabled asp-for="@item.Valor" class="form-control" />
+                                    <span asp-validation-for="@item.Valor" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label asp-for="@item.Classificacao" class="control-label"></label>
+                                    <select disabled asp-for="@item.Classificacao" asp-items="@ViewBag.Classificacao" class="form-control"></select>
+                                    <span asp-validation-for="@item.Classificacao" class="text-danger"></span>
+                                </div>                       
+                                <div class="form-group"> 
+                                    <label asp-for="@item.CompraVenda" class="control-label"></label>
+                                    <select disabled asp-for="@item.CompraVenda" asp-items="@ViewBag.CompraVenda" class="form-control"></select>
+                                    <span asp-validation-for="@item.CompraVenda" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label asp-for="@item.Quantidade" class="control-label"></label>
+                                    <input disabled asp-for="@item.Quantidade" class="form-control" />
+                                    <span asp-validation-for="@item.Quantidade" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="@item.Origem" class="control-label"></label>
+                                    <input disabled asp-for="@item.Origem" class="form-control" />
+                                    <span asp-validation-for="@item.Origem" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label asp-for="@item.PesoBruto" class="control-label"></label>
+                                    <input disabled asp-for="@item.PesoBruto" class="form-control" />
+                                    <span asp-validation-for="@item.PesoBruto" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="@item.RendimentoCarcaca" class="control-label"></label>
+                                    <input disabled asp-for="@item.RendimentoCarcaca" class="form-control" />
+                                    <span asp-validation-for="@item.RendimentoCarcaca" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div disabled class="form-group">
+                                    <label asp-for="@item.Arroba" class="control-label"></label>
+                                    <input disabled asp-for="@item.Arroba" class="form-control" />
+                                    <span asp-validation-for="@item.Arroba" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            <div class="card">
+                    <div class="card-header">Dados da Saída</div>
+                    <div class="card-body row">
+                        <div class="col-md">
+                            <div class="form-group">     
+                                <label asp-for="IdComprador" class="control-label">Comprador</label>
+                                <select asp-for="IdComprador" class ="form-control" 
+                                asp-items="@ViewBag.selectComprador"
+                                ></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="IdAssociado" class="control-label">Associado</label>
+                                <select asp-for="IdAssociado" class ="form-control" 
+                                asp-items="@ViewBag.selectAssociado"></select>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label asp-for="Classificacao" class="control-label"></label>
+                                <select asp-for="Classificacao"  asp-items="@ViewBag.Classificacao" class="form-control"></select>
+                                <span asp-validation-for="Classificacao" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CompraVenda" class="control-label"></label>
+                                <select asp-for="CompraVenda" asp-items="@ViewBag.CompraVenda" class="form-control"></select>
+                                <span asp-validation-for="CompraVenda" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label asp-for="PesoBruto" class="control-label" for="psbruto"></label>
+                                <input asp-for="PesoBruto" id="psbruto" class="form-control" required/>
+                                <span asp-validation-for="PesoBruto" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="RendimentoCarcaca" class="control-label" for="rendCarc"></label>
+                                <input asp-for="RendimentoCarcaca" id="rendCarc" class="form-control" autocomplete="off"/>
+                                <span asp-validation-for="RendimentoCarcaca" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Arroba" class="control-label" for="rendArroba"></label>
+                                <input asp-for="Arroba" id="rendArroba" class="form-control" autocomplete="off" />
+                                <span asp-validation-for="Arroba" class="text-danger"></span>
+                            </div>
+                        </div>                        
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label asp-for="InicioParceriaId" class="control-label">Lote</label>
+                                <select asp-for="InicioParceriaId" class ="form-control" 
+                                asp-items="@ViewBag.selectParceria"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Saida" class="control-label"></label>
+                                <input asp-for="Saida" class="form-control" />
+                                <span asp-validation-for="Saida" class="text-danger"></span>
+                            </div>
+                        </div>                  
+                        @*<div class="form-group">
+                            <label asp-for="PesoMedioAlterado" class="control-label"></label>
+                            <input asp-for="PesoMedioAlterado" id="psMdAlterado" class="form-control" />
+                            <span asp-validation-for="PesoMedioAlterado" class="text-danger"></span>
+                        </div>*@
+                    </div>
+                </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success btn-lg" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="@Url.Content("~/js/methods_pt.js")"></script>
+    <script src="@Url.Content("~/js/calc.arroba.js")"></script>
+}

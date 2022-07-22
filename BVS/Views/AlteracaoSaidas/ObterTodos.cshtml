@@ -1,0 +1,110 @@
+﻿@model IEnumerable<BVS.Models.Entity.Parceria.AlteracaoSaida>
+
+@{
+    ViewData["Title"] = "ObterTodos";
+}
+
+<div class="d-flex justify-content-between align-items-center pt-5 pb-3">
+    <h1>Todas as Saidas Registradas</h1>
+    <a class="btn btn-primary" asp-action="Inserir">Nova Saida</a>
+</div>
+
+<table id="myTable" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InicioParceria)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.PesoMedioAlterado)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Saida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comprador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Associado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Classificacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompraVenda)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InicioParceria.Lote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PesoMedioAlterado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comprador.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Associado.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Classificacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompraVenda)
+            </td>
+            <td>
+                <a asp-action="Atualizar" class="btn btn-success m-1" asp-route-id="@item.BoiId">Editar</a> 
+                <a asp-action="ObterPorId" class="btn btn-info m-1" asp-route-id="@item.BoiId">Detalhes</a> 
+
+                <button type="button" class="btn btn-danger m-1 btn-sm" data-toggle="modal" data-target="#deleteModal-@item.BoiId">
+                                    Excluir
+                </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="deleteModal-@item.BoiId" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Excluir Cliente</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                Deseja realmente excluir o comprador?
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary m-1" data-dismiss="modal">Não</button>
+                                <a asp-action="Excluir" class="btn btn-danger m-1" asp-route-id="@item.BoiId">Excluir</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts{
+    <script>
+        $(document).ready(function(){
+            $('#myTable').DataTable(
+                {
+                    "language":
+                        {
+                            "url":"//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json" 
+                        }
+                });
+        });
+    </script>
+
+}

@@ -1,0 +1,166 @@
+﻿@model IEnumerable<BVS.Models.Entity.Parceria.InicioParceria>
+
+@{
+    ViewData["Title"] = "ObterTodos";
+}
+<div class="d-flex justify-content-between align-content-center pt-3 pb-2">
+    <h1>Parcerias Cadastradas</h1>
+    <a class="btn btn-primary btn-lg" asp-action="Inserir">Nova Parceria</a>
+</div>
+<br />
+<div class="card">
+    <div class="card-header">Dados Pessoais</div>
+    <div class="card-body">        
+        <table id="myTable" class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Lote)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PesoBruto)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RendimentoCarcaca)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Arroba)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Comprador)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Associado)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.Quantidade)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Classificacao)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CompraVenda)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.DataInicioParceria)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.Origem)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Valor)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+            <tbody>
+                @foreach (var item in Model) {            
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Lote)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PesoBruto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RendimentoCarcaca)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Arroba)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Comprador.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Associado.Nome)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.Quantidade)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Classificacao)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompraVenda)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataInicioParceria)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.Origem)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Valor)
+                        </td>
+                        <td>
+                            
+                                    <a asp-action="Atualizar" class="btn btn-success m-1 btn-sm" asp-route-id="@item.BoiId">Atualizar</a> 
+                                    <a asp-action="ObterPorId" class="btn btn-info m-1 btn-sm" asp-route-id="@item.BoiId">Detalhes</a> 
+                   
+                                    <button type="button" class="btn btn-warning m-1 btn-sm" data-toggle="modal" data-target="#saidaModal-@item.BoiId">
+                                                Saida
+                                    </button> 
+
+                                    <button type="button" class="btn btn-danger m-1 btn-sm" data-toggle="modal" data-target="#deleteModal-@item.BoiId">
+                                                Excluir
+                                    </button>
+                                <div class="modal fade" id="deleteModal-@item.BoiId" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deleteModalLabel">Excluir Cliente</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Deseja realmente excluir a parceria entre @item.Comprador.Nome e @item.Associado.Nome?
+                                            </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                                                <a asp-action="Excluir" class="btn btn-danger m-1" asp-route-id="@item.BoiId">Delete</a>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="saidaModal-@item.BoiId" tabindex="-1" role="dialog" aria-labelledby="saidaModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="saidaModalLabel">Adicionar informação da Saida</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                            </div>
+                                            <div class="modal-body">
+                                            O que deseja verificar ?
+                                            </div>
+                                            <div class="modal-footer">
+                                            <a asp-action="Inserir" class="btn btn-warning m-1 btn-sm" asp-route-id="@item.BoiId" asp-controller="AlteracaoSaidas">Saida</a>
+                                            <a asp-action="Atualizar" class="btn btn-success m-1 btn-sm" asp-route-id="@item.BoiId" asp-controller="AlteracaoSaidas">Editar</a> 
+                                            <a asp-action="ObterPorId" class="btn btn-info m-1 btn-sm" asp-route-id="@item.BoiId" asp-controller="AlteracaoSaidas">Detalhes</a>                             
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </td>                
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function(){
+            $('#myTable').DataTable(
+                {
+                    "language":
+                        {
+                            "url":"//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json" 
+                        }
+                });
+        });
+    </script>
+}

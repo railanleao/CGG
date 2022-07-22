@@ -1,0 +1,68 @@
+﻿@using BVS.Models.Entity.CompradorAssociado
+@model BVS.Models.Entity.CompradorAssociado.Associado
+@*CompradorAssociado.Associado*@
+@{
+    ViewData["Title"] = "Inserir";
+}
+
+<div class="d-flex justify-content-between align-items-center pt-5 pb-3">
+    <h1>Inserir Associado</h1>
+    <a class="btn btn-primary" asp-action="ObterTodos">Voltar</a>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md">
+        <form asp-action="Inserir">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="card">
+                <div class="card-header">Dados Pessoais</div>
+                <div class="card-body">
+                    <div class="form-group">
+                         <label asp-for="Nome" class="control-label"></label>
+                         <input asp-for="Nome" class="form-control" />
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                        <label asp-for="CPF" class="control-label"></label>
+                        <input asp-for="CPF" class="form-control" />
+                        <span asp-validation-for="CPF" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Fazenda" class="control-label"></label>
+                        <input asp-for="Fazenda" class="form-control" />
+                        <span asp-validation-for="Fazenda" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Parceria</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label asp-for="DataDaParceria" class="control-label"></label>
+                        <input asp-for="DataDaParceria" class="form-control" />
+                        <span asp-validation-for="DataDaParceria" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="IdComprador" class="control-label"></label>
+                        <select asp-for="IdComprador"  class ="form-control" 
+                        asp-items="@(new SelectList(ViewBag.selectComprador, "Value", "Text"))"
+                        ></select>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

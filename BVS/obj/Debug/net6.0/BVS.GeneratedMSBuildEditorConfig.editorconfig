@@ -1,0 +1,100 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BVS
+build_property.RootNamespace = BVS
+build_property.ProjectDir = C:\Users\rleao\Projetos\BVS\BVS\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\rleao\Projetos\BVS\BVS
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/AlteracaoSaidas/Atualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0ZXJhY2FvU2FpZGFzXEF0dWFsaXphci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/AlteracaoSaidas/Inserir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0ZXJhY2FvU2FpZGFzXEluc2VyaXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/AlteracaoSaidas/ObterPorId.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0ZXJhY2FvU2FpZGFzXE9idGVyUG9ySWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/AlteracaoSaidas/ObterTodos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0ZXJhY2FvU2FpZGFzXE9idGVyVG9kb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/Associados/Atualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzb2NpYWRvc1xBdHVhbGl6YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/Associados/Inserir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzb2NpYWRvc1xJbnNlcmlyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/Associados/ObterPorId.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzb2NpYWRvc1xPYnRlclBvcklkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/Associados/ObterTodos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzb2NpYWRvc1xPYnRlclRvZG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/Comprador/Atualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhZG9yXEF0dWFsaXphci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/Comprador/Inserir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhZG9yXEluc2VyaXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/Comprador/ObterPorId.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhZG9yXE9idGVyUG9ySWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/Comprador/ObterTodos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhZG9yXE9idGVyVG9kb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/InicioParcerias/Atualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvUGFyY2VyaWFzXEF0dWFsaXphci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/InicioParcerias/Inserir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvUGFyY2VyaWFzXEluc2VyaXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/InicioParcerias/ObterPorId.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvUGFyY2VyaWFzXE9idGVyUG9ySWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/InicioParcerias/ObterTodos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvUGFyY2VyaWFzXE9idGVyVG9kb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rleao/Projetos/BVS/BVS/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-fn70viauu3

@@ -1,0 +1,124 @@
+﻿@using BVS.Models.Entity.Parceria
+@model BVS.Models.Entity.Parceria.InicioParceria
+
+@{
+    ViewData["Title"] = "Inserir";
+}
+<div class="d-flex justify-content-between align-content-center pt-3 pb-2">
+    <h1>Inserir Parceria</h1>
+    <a class="btn btn-primary btn-lg" asp-action="ObterTodos">Voltar</a>
+</div>
+
+<br />
+<div class="row">
+    <div class="col-md">
+        <form asp-action="Inserir">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="card">
+                <div class="card-header">Parceria e Associado</div>
+                <div class="card-body row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="Lote" class="control-label"></label>
+                            <input asp-for="Lote" class="form-control"/>
+                            <span asp-validation-for="Lote" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="IdComprador" class="control-label">Comprador</label>
+                            <select asp-for="IdComprador" class ="form-control" 
+                            asp-items="@ViewBag.selectComprador"
+                            ></select>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">   @*(new SelectList(ViewBag.selectAssociado, "Value", "Text") (new SelectList(ViewBag.selectComprador, "Value", "Text"))*@
+                            <label asp-for="IdAssociado" class="control-label">Associado</label>
+                            <select asp-for="IdAssociado" class ="form-control" 
+                            asp-items="@ViewBag.selectAssociado"></select>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Dados do Início da Parceria</div>
+                <div class="card-body row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="DataInicioParceria" class="control-label"></label>
+                            <input asp-for="DataInicioParceria" class="form-control" />
+                            <span asp-validation-for="DataInicioParceria" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">@*    @Html.GetEnumSelectList<Classificacao>()   (new SelectListItem(ViewBag.selectClassf, "Value", "Text")) Html.GetEnumSelectList<CompraVenda>()*@
+                            <label asp-for="Classificacao" class="control-label"></label>
+                            <select asp-for="Classificacao" asp-items="@ViewBag.Classificacao" class="form-control"></select>
+                            <span asp-validation-for="Classificacao" class="text-danger"></span>
+                        </div>
+                    </div>    
+                    <div class="col-md">
+                        <div class="form-group"> 
+                            <label asp-for="CompraVenda" class="control-label"></label>
+                            <select asp-for="CompraVenda" asp-items="@ViewBag.CompraVenda" class="form-control"></select>
+                            <span asp-validation-for="CompraVenda" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+                     <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="PesoBruto" class="control-label" for="psbruto"></label>
+                            <input asp-for="PesoBruto" id="psbruto" class="form-control" required/>
+                            <span asp-validation-for="PesoBruto" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="RendimentoCarcaca" class="control-label" for="rendCarc"></label>
+                            <input asp-for="RendimentoCarcaca" id="rendCarc" class="form-control" autocomplete="off"/>
+                            <span asp-validation-for="RendimentoCarcaca" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Arroba" class="control-label" for="rendArroba"></label>
+                            <input asp-for="Arroba" id="rendArroba" class="form-control" autocomplete="off" />
+                            <span asp-validation-for="Arroba" class="text-danger"></span>
+                        </div>
+                    </div>
+            <div class="card">
+                <div class="card-body row">    
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label asp-for="Quantidade" class="control-label"></label>
+                            <input asp-for="Quantidade" class="form-control" />
+                            <span asp-validation-for="Quantidade" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Origem" class="control-label"></label>
+                            <input asp-for="Origem" class="form-control" />
+                            <span asp-validation-for="Origem" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Valor" class="control-label"></label>
+                            <input asp-for="Valor" class="form-control" />
+                            <span asp-validation-for="Valor" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success btn-lg" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}   
+    <script src="@Url.Content("~/js/methods_pt.js")"></script>
+    <script src="@Url.Content("~/js/calc.arroba.js")"></script>
+
+}               
